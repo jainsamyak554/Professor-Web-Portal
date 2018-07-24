@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    {% load static %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>IITG</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static "web/bootstrap.min.css" %}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static "web/1-col-portfolio.css" %}" rel="stylesheet">
+
+  </head>
+
+  <body>
+  <div class="bg" style="background-image: url("{% static 'web/images/bb1.jpg' %}");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; ">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">Indian Institute Of Technology, Guwahati</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              {% if not user.is_authenticated %}
+              <a class="nav-link" href="{% url 'login' %}"> <span class="glyphicon glyphicon-off" aria-hidden="true"></span>Login
+
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'web:register' %}">Sign Up</a>
+            </li>
+            {% endif %}
+            {% if  user.is_authenticated %}
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'logout' %}"> <span class="glyphicon glyphicon-off" aria-hidden="true"></span>Logout</a>
+            </li>
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+      <!-- Page Heading -->
+      <h1> <img src="{% static 'web/images/iitg.png' %}" alt="HOME" height="42" width="42"/> </h1>
+      <h1 class="my-4" >  Indian Institue of Technology, Guwahati
+        <small>estd 1994</small>
+        <img src="{% static 'web/images/iitg.jpg' %}" alt="HOME"  style="padding:5px;border:thin solid black;" >
+      </h1>
+      <h2 style="padding-bottom: 30px; font: bolder;"> Departments: </h2>
+      <!-- Project One -->
+      <div class="row">
+        <div class="col-md-4">
+          <a href="#">
+            <img class="img-fluid rounded mb-3 mb-md-0" src="{% static 'web/images/brainnn.jpg' %}" alt="" height="400" width="600" padding right="500">
+          </a>
+        </div>
+        <div class="col-md-5">
+          <h3>Biosciences and Bioengineering </h3>
+          <p>The major thrust of the department includes biochemical engineering, tissue engineering, plant biotechnology, nanobiotechnology, computational biology, cancer biology, infectious diseases and proteomics. The department has initiated efforts to establish advanced research laboratories in all the thrust areas. Apart from fundamental research, the department aims to meet the targeted demands to cater the requirements of biotechnology based industries.</p>
+          <a class="btn btn-primary" href="{% url 'web:deptview' 5 %}">Know More..</a>
+        </div>
+      </div>
+      <!-- /.row -->
+
+      <hr>
+
+      <!-- Project Two -->
+      <div class="row">
+        <div class="col-md-4">
+          <a href="#">
+            <img class="img-fluid rounded mb-3 mb-md-0" src="{% static 'web/images/chemical.jpg' %}" alt="" height="400" width="600">
+          </a>
+        </div>
+        <div class="col-md-5">
+          <h3>Chemical Engineering</h3>
+          <p>Started in 2002, the department is endowed with young, vibrant and dynamic faculty well qualified to impart high quality teaching and research in Chemical Engineering. The research interests of the faculty vary broadly ranging from nano scale to meso scale systems/technology that may demand a collaborative approach with Chemistry, Materials Science, Bio-technology, Computing and Electronics.</p>
+          <a class="btn btn-primary" href="{% url 'web:deptview' 6 %}">Know More..</a>
+        </div>
+      </div>
+      <!-- /.row -->
+
+      <hr>
+
+      <!-- Project Three -->
+      <div class="row">
+        <div class="col-md-4">
+          <a href="#">
+            <img class="img-fluid rounded mb-3 mb-md-0" src="{% static 'web/images/chemistry.jpeg' %}" alt="" height="400" width="600">
+          </a>
+        </div>
+        <div class="col-md-5">
+          <h3>Chemistry</h3>
+          <p>Department of Chemistry, Indian Institute of Technology Guwahati is one of the globally recognized, emerging and leading department in science and technology with a growing list of accolades earned nationally and internationally. The Department started in 1995, covers all the major areas of Chemistry, viz. inorganic, organic, physical and theoretical chemistry.</p>
+          <a class="btn btn-primary" href="{% url 'web:deptview' 7 %}">Know More..</a>
+        </div>
+      </div>
+      <!-- /.row -->
+
+      <hr>
+
+      <!-- Project Four -->
+      <div class="row">
+
+        <div class="col-md-4">
+          <a href="#">
+            <img class="img-fluid rounded mb-3 mb-md-0" src="{% static 'web/images/civil.jpg' %}" alt="" height="400" width="600">
+          </a>
+        </div>
+        <div class="col-md-5">
+          <h3>Civil Engineering</h3>
+          <p>The Department of Civil Engineering since its formation is committed to research and development in Societal Infrastructure. The vision of the department is to give an exposure to Civil Engineers to various challenges in the profession.</p>
+          <a class="btn btn-primary" href="{% url 'web:deptview' 9 %}">Know More..</a>
+        </div>
+      </div>
+      <!-- /.row -->
+
+      <hr>
+
+
+      <div class="row">
+
+        <div class="col-md-4">
+          <a href="#">
+            <img class="img-fluid rounded mb-3 mb-md-0" src="{% static 'web/images/c.jpeg' %}" alt="" height="400" width="600">
+          </a>
+        </div>
+        <div class="col-md-5">
+          <h3>Computer Science & Engineering</h3>
+          <p> The Department of Computer Science and Engineering at the Indian Institute of Technology Guwahati, was formed in 1995. Since its inception, the department has always been recognized all over the world for excellence in research and teaching. The Department provides an outstanding research environment complemented by superior teaching for its students to flourish in. The major areas of research include Algorithms, Computational Geometry, Mobile Robotics, Artificial Intelligence, Speech Processing, Natural Language Processing, Image Processing, Software Engineering, Formal Verification, Electronic CAD, Computer Systems & Security, Networks.</p>
+          <a class="btn btn-primary" href="{% url 'web:deptview' 3 %}">Know More..</a>
+        </div>
+      </div>
+      <!-- /.row -->
+
+      <hr>
+
+      <div class="row">
+
+        <div class="col-md-4">
+          <a href="#">
+            <img class="img-fluid rounded mb-3 mb-md-0" src="{% static 'web/images/des.jpeg' %}" alt="" height="400" width="600">
+          </a>
+        </div>
+        <div class="col-md-5">
+          <h3>Department of Design</h3>
+          <p> The Department of Design(DoD), one of the thirteen departments at IIT Guwahati, was set up with a vision to enkindle some of the brightest technical minds of the country a passion for innovation in technology driven by a firm understanding, appreciation and celebration of design. </p>
+          <a class="btn btn-primary" href="{% url 'web:deptview' 10 %}">Know More..</a>
+        </div>
+      </div>
+      <!-- /.row -->
+
+      <hr>
+
+       <div class="row">
+
+        <div class="col-md-4">
+          <a href="#">
+            <img class="img-fluid rounded mb-3 mb-md-0" src="{% static 'web/images/eee.jpeg' %}" alt="" height="400" width="600">
+          </a>
+        </div>
+        <div class="col-md-5">
+          <h3>Electrical & Electronics Engineering</h3>
+          <p> The department was established during the inception of the institute in 1995 as the department of Electronics and Communication Engineering (ECE). Since its commencement, the primary objective of the department has been to impart quality education, training and research at the undergraduate, postgraduate and doctoral levels in various areas of Electronics and Communication Engineering with broad emphasis on design aspects of electronic systems.</p>
+          <a class="btn btn-primary" href="{% url 'web:deptview' 11 %}">Know More..</a>
+        </div>
+      </div>
+      <!-- /.row -->
+
+      <hr>
+
+
+       <div class="row">
+
+        <div class="col-md-4">
+          <a href="#">
+            <img class="img-fluid rounded mb-3 mb-md-0" src="{% static 'web/images/humanities.jpg' %}" alt="" height="400" width="600">
+          </a>
+        </div>
+        <div class="col-md-5">
+          <h3>Humanities and Sociology</h3>
+          <p>The Department of Humanities and Social Sciences at IIT Guwahati is a centre for research and teaching composed of academics from eight different disciplines: Economics, English, Linguistics, Philosophy, Psychology, Sociology, History & Archaeology and Political Science. With its varied range of research interests and expertise, the department promotes interdisciplinary work in humanities and social sciences, offering projects, supervision and fellowships aimed to attract students and researchers from diverse academic and cultural backgrounds. </p>
+          <a class="btn btn-primary" href="{% url 'web:deptview' 12 %}">Know More..</a>
+        </div>
+      </div>
+      <!-- /.row -->
+
+      <hr>
+
+
+       <div class="row">
+
+        <div class="col-md-4">
+          <a href="#">
+            <img class="img-fluid rounded mb-3 mb-md-0" src="{% static 'web/images/physics.jpeg' %}" alt="" height="400" width="600">
+          </a>
+        </div>
+        <div class="col-md-5">
+          <h3>Physics</h3>
+          <p>The Department of Physics at the Indian Institute of Technology Guwahati, was formed in 1995. The Department has highly active and vibrant faculty members committed to impart high quality research standards in pure and applied areas of physics and also trains students to become competent and motivated physicists. The research interests of the faculty members cover broad range of physics: Condensed Matter Physics , Lasers and Photonics, High Energy, Theoretical, Mathematical Physics and Astrophysics.</p>
+          <a class="btn btn-primary" href="{% url 'web:deptview' 8 %}">Know More..</a>
+        </div>
+      </div>
+      <!-- /.row -->
+
+      <hr>
+
+       <div class="row">
+
+        <div class="col-md-4">
+          <a href="#">
+            <img class="img-fluid rounded mb-3 mb-md-0" src="{% static 'web/images/maths.jpeg' %}" alt="" height="400" width="600">
+          </a>
+        </div>
+        <div class="col-md-5">
+          <h3>Mathematics</h3>
+          <p>The department has at present 40 energetic and dedicated faculty members in many diverse areas of mathematics, and it also boasts of hosting visits of a good number of distinguished mathematicians every year.
+The department has its own state-of-the-art computing laboratories and it also hosts the National Board of Higher Mathematics (NBHM) Regional Library. The department has also been actively engaged in organizing conferences, workshops, QIP short term courses and training programmes for both teachers and students including Mathematics Training and Talent Search Programme (MTTS) and Advanced Training in Mathematics (ATM) Schools. </p>
+          <a class="btn btn-primary" href="{% url 'web:deptview' 4 %}">Know More..</a>
+        </div>
+      </div>
+      <!-- /.row -->
+
+      <hr>
+
+
+
+    <!-- /.container -->
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Website by- Samyak Jain <br>
+        Shreyanshi Bharadia <br>
+        Sanchit Jangir</p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{% static "web/jquery.min.js" %}"></script>
+    <script src="{% static "web/bootstrap.bundle.min.js" %}"></script>
+    </div>
+  </body>
+
+</html>

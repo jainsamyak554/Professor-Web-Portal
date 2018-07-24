@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load staticfiles %}
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{{info.Name}} </title>
+    <!-- Bootstrap -->
+     <link rel="stylesheet" type="text/css" href="{% static 'web/style.css' %}"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Germania+One" rel='stylesheet' type='text/css'/>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/modernizr-2.6.2.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="{% static 'web/bootstrap1.min.css' %}" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="{% static 'web/font-awesome.min.css' %}" rel="stylesheet">
+    <!-- NProgress -->
+        <!-- iCheck -->
+
+
+    <!-- bootstrap-progressbar -->
+
+    <!-- JQVMap -->
+    <!-- bootstrap-daterangepicker -->
+
+
+    <!-- Custom Theme Style -->
+    <link href="{% static 'web/custom.min.css' %}" rel="stylesheet">
+  </head>
+
+  <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+        <div class="col-md-3 left_col">
+          <div class="left_col scroll-view">
+            <div class="navbar nav_title" style="border: 0;text-decoration-color: red">
+              <a href="{% url 'web:homeview' %}" class="site_title"></i> <span>IIT Guwahati</span></a>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <!-- menu profile quick info -->
+            <div class="profile clearfix">
+              <div class="profile_pic">
+                <img src="{{info.photo.url}}" alt="..." class="img-circle profile_img">
+              </div>
+              <div class="profile_info">
+                <span>Welcome,</span>
+                <h2>{{info.Name}}</h2>
+              </div>
+            </div>
+            <!-- /menu profile quick info -->
+
+            <br />
+
+            <!-- sidebar menu -->
+            <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+              <div class="menu_section">
+                <h3>General</h3>
+                <ul class="nav side-menu">
+                  <li><a href="{% url 'web:aboutview' info.Dept.id info.id %}"><i class="glyphicon glyphicon-home" style="font-size:20px"></i>     About </span></a>
+                  </li>
+                  <li><a href="{% url 'web:teachingview' info.Dept.id info.id %}"><i class="glyphicon glyphicon-briefcase" style="font-size:20px"></i> Teaching </span></a>
+                  </li>
+                  <li><a href="{% url 'web:projectview' info.Dept.id info.id %}"><i class="glyphicon glyphicon-education" style="font-size:20px"></i> Projects </span></a>
+                  </li>
+                  <li><a href="{% url 'web:publicationview' info.Dept.id info.id %}"><i class="glyphicon glyphicon-credit-card" style="font-size:20px"></i> Publications </span></a>
+                  </li>
+                  <li><a href="{% url 'web:recognitionview' info.Dept.id info.id %}"><i class="glyphicon glyphicon-th" style="font-size:20px"></i> Recognitions </span></a>
+                  </li>
+                </ul>
+              </div>
+
+
+            </div>
+            <!-- /sidebar menu -->
+
+
+          </div>
+        </div>
+
+
+        <!-- /top navigation -->
+        <div class="top_nav">
+          <div class="nav_menu">
+            <nav>
+              <div class="nav toggle">
+                <a id="menu_toggle"><i class="glyphicon glyphicon-align-justify"></i></a>
+              </div>
+              <ul class="nav navbar-nav navbar-right">
+                {% if not user.is_authenticated %}
+                <li ><a href="{% url 'login' %}" >Login</a></li>
+                {% endif %}
+                {% if user.is_authenticated %}
+                <li><a href="{% url 'logout' %}" >Logout</a></li>
+                <li><a class="nav-link" href="{% url 'web:postupdate' info.Dept.id info.id %}">Crawl text</a></li>
+                {% endif %}
+
+              </ul>
+            </nav>
+          </div>
+
+        </div>
+         page content
+        <div class="right_col" role="main">
+        {% block body %}
+  {% endblock %}
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /page content -->
+
+        <!-- footer content -->
+        <footer>
+          <div class="pull-right">
+          </div>
+          <div class="clearfix"></div>
+        </footer>
+        <!-- /footer content -->
+      </div>
+    </div>
+
+
+    <!-- jQuery -->
+    <script src="{% static 'web/jquery.min.js' %}"></script>
+    <!-- Bootstrap -->
+    <script src="{% static 'web/bootstrap2.min.js' %}"></script>
+    <!-- FastClick -->
+
+    <!-- NProgress -->
+
+
+    <!-- Custom Theme Scripts -->
+    <script src="{% static 'web/custom.min.js' %}"></script>
+
+  </body>
+
+</html>

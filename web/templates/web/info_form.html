@@ -1,0 +1,112 @@
+<!--A Design by W3layouts
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+style="background: url(bg.jpg) no-repeat center center fixed; background-size: cover;background-size: 100% auto;
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Details :) </title>
+	<!-- Meta tags -->
+		{% load staticfiles %}
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Modish Appointment Form Widget Responsive Widget, Audio and Video players, Login Form Web Template, Flat Pricing Tables, Flat Drop-Downs, Sign-Up Web Templates, Flat Web Templates, Login Sign-up Responsive Web Template, Smartphone Compatible Web Template, Free Web Designs for Nokia, Samsung, LG, Sony Ericsson, Motorola Web Design" />
+		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+	<!-- Meta tags -->
+<!-- font-awesome icons -->
+	<link href="//fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Muli:300,400,600,600i,700" rel="stylesheet">
+   <link rel="stylesheet" href="{% static 'web/font-awesome5.min.css' %}" />
+<!-- //font-awesome icons -->
+<!--stylesheets-->
+<link href="{% static 'web/style5.css' %}" rel='stylesheet' type='text/css' media="all">
+<!--//style sheet end here-->
+<!--time-->
+<link href="{% static 'web/wickedpicker.css' %}" rel="stylesheet" type='text/css' media="all" /><
+<link rel="stylesheet" href="{% static 'web/j.css' %}">
+
+
+</head>
+<body background="b.jpg">
+
+     <h1 class="header-w3ls">
+Fill in your details! </h1>
+ <div class="appointment-w3">
+    <form action="" method="post" enctype="multipart/form-data">
+		{% csrf_token %}
+         <div class="form-control-w3l">
+
+               <input type="text" id="name" name="Name" maxlength="250" required id="id_Name" placeholder="Your name...">
+          </div>
+          <div class="form-control-w3l">
+
+              <input type="text" id="name" name="Designation" maxlength="300" required id="id_Designation" placeholder="Your Designation">
+          </div>
+          <div class="form-control-w3l">
+
+       			<input type="text" id="name" name="Phone" maxlength="20" required id="id_Phone" placeholder="Phone Number" />
+          </div>
+          <div class="form-control-w3l">
+
+       			<input type="email" id="name" name="webmail" maxlength="100" id="id_webmail" placeholder="Webmail">
+          </div>
+
+          <div class="form-control-w3l">
+
+       			<input type="text" id="name" name="room" maxlength="100" required id="id_room" placeholder="Room Number">
+          </div>
+
+
+           <div class="form-control-w3l">
+
+				<input type="text" id="name" name="residence" maxlength="250" required id="id_residence" placeholder="Residence" />
+		   </div>
+
+		   <div class="form-control-w3l">
+				 <input type="file" id="name" name="photo" id="id_photo" />
+
+			</div>
+
+
+		   <div class="form-control-w3l">
+		   <p id="name" style="color: white; padding-left: 10px"> Department:
+		   <select name="Dept" id="id_Dept" class="styled-select">
+
+ 			 <option value="" selected>---------</option>
+
+  						<option value="3" >Computer Science And Engineering</option>
+
+  						<option value="4" >Mathematics</option>
+
+  						<option value="5" >Biosciences & Bioengineering</option>
+
+  						<option value="6" >Chemical Engineering</option>
+
+  						<option value="7" >Chemistry</option>
+
+ 					<option value="8">Physics</option>
+          <option value="9">Civil Engineering</option>
+          <option value="10">Department Of Design</option>
+          <option value="11">Electrical &amp;Electronics Engineering</option>
+          <option value="12">Humanities and Sociology</option>
+
+		</select>
+		</p>
+		</div>
+
+		 <div class="form-control-w3l">
+          <input type="submit" value="Go!" class="styled-select">
+
+		 </div>
+
+
+
+		<!-- js -->
+  <script type='text/javascript' src="{% static 'web/jquery-2.2.3.min.js' %}"></script>
+
+
+</body>
+</html>

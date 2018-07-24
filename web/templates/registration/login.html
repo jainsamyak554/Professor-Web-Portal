@@ -1,0 +1,47 @@
+
+{% block body %}
+
+{% if form.errors %}
+<p>Your username and password didn't match. Please try again.</p>
+{% endif %}
+
+{% if next %}
+    {% if user.is_authenticated %}
+    <p>Your account doesn't have access to this page. To proceed,
+    please login with an account that has access.</p>
+    {% else %}
+    <p>Please login to see this page.</p>
+    {% endif %}
+{% endif %}
+
+<form method="post" action="{% url 'login' %}">
+{% csrf_token %}
+<body bgcolor="#6a5acd">
+<h1 align="center" style="text-decoration: underline; padding-top: 20px"> Fill in your Login details.</h1>
+<div align="center" style="padding-top: 20px; font-size: 15px;">
+  <td style="padding-bottom: 10px">{{ form.username.label_tag }}</td>
+  <td style="padding-bottom:10px">{{ form.username }}</td>
+    <br>
+    <br>
+</div>
+<div align="center" style="padding-bottom: 10px">
+  <td style="padding-bottom: 5px">{{ form.password.label_tag }}</td>
+  <td style="padding-top: 10px">{{ form.password }}</td>
+    <br>
+    <br>
+</div>
+<div align="center" style="padding-bottom: 10px">
+
+</div>
+<div style="padding-bottom: 10px " align="center">
+  <input type="submit" value="login" style="padding-bottom: 10px; width: 70px; height: 20px" />
+  <input type="hidden" name="next" value="{{ next }}" />
+</div>
+</form>
+
+
+
+{% endblock %}
+
+
+

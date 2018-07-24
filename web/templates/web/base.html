@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block title %}
+        {% endblock %}
+    </title>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'web/style.css' %}"/>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Germania+One" rel='stylesheet' type='text/css'/>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/modernizr-2.6.2.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+
+
+
+        <div class="collapse navbar-collapse" id="topNavBar">
+            <ul class="nav navbar-nav">
+                <li class="active">
+                    {% block xyz %}
+                    <a href="#">
+                        <span class="icon icon-user" aria-hidden="true"></span>&nbsp; About
+                    </a>
+                    {% endblock %}
+                </li>
+                <li class="active">
+                    <a href="#">
+                        <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span>&nbsp;Teaching
+                    </a>
+                </li>
+                 <li class="active">
+                    <a href="{% url 'web:studentview' %}">
+                        <span class="icon icon-graduation-cap" aria-hidden="true"></span>&nbsp; Students
+                    </a>
+                </li>
+                 <li class="active">
+                    <a href="{% url 'web:projectview' %}">
+                        <span class="icon icon-beaker" aria-hidden="true"></span>&nbsp; Projects
+                    </a>
+                </li>
+                 <li class="active">
+                    <a href="{% url 'web:pubview' %}">
+                        <span class="icon icon-documents" aria-hidden="true"></span>&nbsp; Publications
+                    </a>
+                </li>
+                 <li class="active">
+                    <a href="{% url 'web:recognitionview' %}">
+                        <span class="icon icon-sheild" aria-hidden="true"></span>&nbsp; Recognitions
+                    </a>
+                </li>
+                 <li class="active">
+                    <a href="#">
+                        <span class="oi oi-info" aria-hidden="true"></span>&nbsp; Others
+                    </a>
+                </li>
+                 <li class="active">
+                    <a href="#">
+                        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp; Personal Page
+                    </a>
+                </li>
+            </ul>
+
+
+        </div>
+    </div>
+</nav>
+{% block body %}
+{% endblock %}
+</body>
+</html>
+

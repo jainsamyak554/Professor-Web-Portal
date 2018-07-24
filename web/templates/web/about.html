@@ -1,0 +1,55 @@
+{% extends 'web/base2.html' %}
+{% block title %}About{% endblock %}
+
+
+
+{% block body %}
+
+
+        <div class="my-auto">
+          <h1 class="mb-0"> {{Infoo.name }}
+          </h1>
+            <span class="text-primary">
+          <div class="subheading mb-5">{{Infoo.Designation}} · {{Infoo.Dept}} · {{Infoo.Phone}} ·
+            <a href="mailto:name@email.com">{{Infoo.webmail}}</a>
+              </span>
+        </div>
+        </div>
+
+<div class="container-fluid ">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-3">
+
+                    <h1 style="color:black">
+                        OFFICE
+                    </h1>
+                    <h2>
+                        <ul>
+                            <li>
+                                {{ Infoo.room }}
+                            </li>
+                            <li>
+                                Phone:{{ Infoo.Phone }}
+                            </li>
+                            <li>
+                                Email :{{ Infoo.webmail }}@iitg.ernet.in
+                            </li>
+                        </ul>
+                    </h2>
+                </div>
+                <div class="col-md-4 col-md-offset-3">
+                    <h1 style="color:black">
+                        Residence
+                    </h1>
+                    <h2>
+                        <ul id="info">
+                            <li>
+                                {{ Infoo.residence }}
+                            </li>
+
+                        </ul>
+                    </h2>
+                </div>
+        </div>
+    </div>
+{% endblock %}

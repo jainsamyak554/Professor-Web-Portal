@@ -1,0 +1,40 @@
+{% extends 'web/base2.html' %}
+{% block title %}
+
+Projects{% endblock %}
+
+{% block body %}
+    <div class="container-fluid">
+        <div class="row"> <font size="7">
+            <h1 style="padding-bottom: 20px; color: black">
+                <span class="glyphicon glyphicon-education"></span> Sponsored Research Projects
+            </h1>
+            {% if user.is_authenticated %}
+             <h2 align="right">
+
+            <button type="button"  height="20px" width="50px" ><a href="{% url 'web:projectcreate' info.Dept.id info.id %}"> Add new Projects!</a></button>
+        </h2>
+            {% endif %}
+        </font>
+            {% for project in info.project_set.all %}
+            <div class="col" >
+                <h10 style="align : justify"> <b>Project title:</b> <i> "{{ project.title }}" </i></h10>
+                <br>
+                <h10><b>PI: </b>"{{ project.pi }}"</h10>
+                <br>
+                <h10><b>Funding Agency:</b> "{{ project.agency }}"</h10>
+                <br>
+                <h10><b>Start Year:</b> "{{ project.startyear }}"</h10>
+                <br>
+                <h10><b>End Year:</b> "{{ project.endyear }}"  </h10>
+                {% if user.is_authenticated %}
+                <p align="right" style="padding-top: 0px"> <a href=""> Update</a> </p>
+                {% endif %}
+            </div>
+            <br>
+            <br>
+            {% endfor %}
+
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'web/base2.html' %}
+{% block title %}Publications{% endblock %}
+
+{% block body %}
+<div class="container-fluid" xmlns="http://www.w3.org/1999/html">
+        <div class="row"> <font size="7">
+            <h1 style="padding-bottom: 20px; color: black">
+                <span class="glyphicon glyphicon-credit-card"></span> Publications
+            </h1>
+            {% if user.is_authenticated %}
+             <h2 align="right">
+            <button type="button"  height="20px" width="50px" ><a href="{% url 'web:publicationcreate' info.Dept.id info.id %}"> Add new publications!</a></button>
+        </h2>
+            {% endif %}
+        </font>
+    <div class="container-fluid">
+        <div class="row">
+            <ul>
+            {% for publication in info.publication_set.all %}
+                <li style="padding-bottom: 8px">{{ publication.publication_details }}</li>
+
+                 {% if user.is_authenticated %}
+                <p align="right"> <a href="{% url 'web:publicationupdate' publication.id %}"> Update</a> </p>
+                {% endif %}
+                <br>
+            {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endblock %}

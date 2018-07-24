@@ -1,0 +1,11 @@
+body{
+    background: white url("images/background.jpg.jpg") ;
+}
+
+.navbar{
+    border-radius: 0;
+}
+
+.navbar-brand{
+    font-family: 'Germania+One', cursive;
+}

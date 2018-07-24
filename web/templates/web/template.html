@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action='.' method='POST'>
+    {{ form }}
+    <input type="submit" />
+    <button class='js-captcha-refresh'></button>
+</form>
+$('.js-captcha-refresh').click(function(){
+    $form = $(this).parents('form');
+
+    $.getJSON($(this).data('url'), {}, function(json) {
+        // This should update your captcha image src and captcha hidden input
+    });
+
+    return false;
+});
+</body>
+</html>

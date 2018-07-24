@@ -1,0 +1,53 @@
+{% extends 'web/base2.html' %}
+{% block title %} Teachings {% endblock %}
+
+{% block body %}
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<head>-->
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+  <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+  <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
+  <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+<!--</head>-->
+    <!--<body>-->
+
+    <div class="container">
+        <h1>
+            <i class="glyphicon glyphicon-briefcase" style="font-size:20px"> </i>  Teachings
+
+        </h1>
+        {% if user.is_authenticated %}
+        <h2 align="right">
+            <button type="button"  height="20px" width="50px" ><a href="{% url 'web:teachingcreate' info.Dept.id info.id %}"> Add new teaching!</a></button>
+        </h2>
+        {% endif %}
+        <div class="table responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th> Year</th>
+                        <th> Semester</th>
+                        <th> Course</th>
+                    </tr>
+                </thead>
+                {% for teaching in info.teaching_set.all %}
+                    <tbody>
+                    <tr>
+                        <td>
+                            {{teaching.year}}
+                        </td>
+                        <td> {{teaching.sem}}</td>
+                        <td> {{teaching.course}}</td>
+                        {% if user.is_authenticated %}
+                        <td><a href="{% url 'web:teachingupdate' teaching.id %}">Update</a> </td>
+                        {% endif %}
+                    </tr>
+                    </tbody>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+
+{% endblock %}
+

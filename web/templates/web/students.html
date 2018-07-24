@@ -1,0 +1,47 @@
+{% extends 'web/base2.html' %}
+{% block title %}Students{% endblock %}
+{% block body %}
+
+     <div class ="container-fluid">
+        <div class="row">
+            <ul>
+                <h3>continuingPHDstudents</h3>
+                {% for continuingPHDstudents in info.continuingphdstudents_set.all %}
+                         <li>
+                            {{ continuingPHDstudents.name }}
+                         </li>
+                {% endfor %}
+                <h3>continuingMTstudents</h3>
+                {% for continuingMTstudents in info.continuingmtstudents_set.all %}
+                         <li>
+                            {{ continuingMTstudents.name }}
+                         </li>
+                {% endfor %}
+                <h3>continuingBTstudents</h3>
+                {% for continuingBTstudents in info.continuingbtstudents_set.all %}
+                         <li>
+                            {{ continuingBTstudents.name }}
+                         </li>
+                {% endfor %}
+                <h3>completePHDstudents</h3>
+                {% for completePHDstudents in info.completephdstudents_set.all %}
+                         <li>
+                            {{ completePHDstudents.name }}
+                         </li>
+                {% endfor %}
+                <h3>completeMTstudents</h3>
+                {% for completeMTstudents in info.completemtstudents_set.all %}
+                         <li>
+                            {{ completeMTstudents.name }}
+                         </li>
+                {% endfor %}
+                <h3>completeBTstudents</h3>
+                {% for completeBTstudents in info.completebtstudents_set.all %}
+                         <li>
+                            {{ completeBTstudents.name }}
+                         </li>
+                {% endfor %}
+            </ul>
+        </div>
+     </div>
+{% endblock %}
